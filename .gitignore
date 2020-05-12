@@ -2,3 +2,4 @@ instance/
 myvenv/
 .vscode/
 memo.md
+__pycache__

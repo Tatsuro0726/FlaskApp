@@ -12,9 +12,9 @@ def login():
         if request.form["username"] != None and request.form["password"] != None:
             username = request.form["username"]
             password = request.form["password"]
-            user = User.query.get(username)
-            login_user(user,True)
-            return render_template('login_test.html',username=username)        
+            user = User.query.filter_by(username=username).first()
+            login_user(user)
+            return render_template('login_test.html',username=user.username)        
     return render_template('login.html')
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -31,19 +31,19 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        login_user(user,True)
+        login_user(user)
         
         return render_template('success.html')
 
+@app.route('/homepage', methods=['GET','POST'])
 @login_required
-@app.route('/homepage', methods=['GET'])
 def index():
     if request.method == 'GET':
         return render_template('homepage.html')
-    
+
     if request.method == 'POST':
         logout_user()
-        return render_template('homepage.html')
+        return redirect(url_for('login'))
 
 @login_manager.user_loader
 def load_user(username):

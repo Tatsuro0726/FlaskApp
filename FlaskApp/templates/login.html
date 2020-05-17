@@ -5,38 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LOGIN</title>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style_login.css">
 </head>
 
 <body>
-    <div class="header"></div>
-    <div class="split-box left-box">
-        <h1>TATSURO and HIYORI</h1>
-        <h2>LOGIN PAGE</h2>
-    </div>
-    <div class="split-box right-box">
-        <form method="POST">
-            <h1>LOGIN</h1>
+    <div class="form-wrapper">
+        <h1>Sign In</h1>
+        <form>
             <div class="form-item">
                 <label for="username"></label>
-                <input type="text" name="username" placeholder="username">
+                <input type="username" name="username" required="required" placeholder="Username"></input>
             </div>
             <div class="form-item">
                 <label for="password"></label>
-                <input type="password" name="password" placeholder="password">
+                <input type="password" name="password" required="required" placeholder="Password"></input>
             </div>
-            <div class="form-button">
-                <input type="submit" class="button" title="Login" value="Login">
+            <div class="button-panel">
+                <input type="submit" class="button" title="Sign In" value="Sign In"></input>
             </div>
         </form>
         <div class="form-footer">
-            <form method="GET">
-                <p><a href='./register'>Create an account</a></p>
-                <p><a href="**********">Forgot password?</a></p>
-            </form>
+            <p><a href="#">Create an account</a></p>
+            <p><a href="#">Forgot password?</a></p>
         </div>
     </div>
-    <div class="footer"></div>
 </body>
 
 </html>

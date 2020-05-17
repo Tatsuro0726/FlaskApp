@@ -14,9 +14,6 @@ class User(UserMixin,db.Model):
     username = db.Column(db.String(50), nullable=False, unique=True)
     password = db.Column(db.String(255), nullable=False)
     created_time = db.Column(db.DateTime, nullable=False, default=datetime.now)
-    update_time = db.Column(db.DateTime, nullable=False, default=datetime.now)
-    # # User fields
-    is_active = db.Column(db.Boolean, nullable=False,default=True)
 
     def __repr__(self):
         return '<User %r>' % self.username

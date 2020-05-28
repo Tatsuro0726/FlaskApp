@@ -36,10 +36,10 @@ def register():
         
         db.session.add(user)
         db.session.commit()
-
         login_user(user)
         
         return render_template('success.html')
+
 
 @app.route('/index', methods=['GET','POST'])
 @login_required

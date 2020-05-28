@@ -9,7 +9,7 @@ class User(UserMixin,db.Model):
     # Primary Key
     id = db.Column(db.Integer, primary_key=True)
 
-    # # User Authentication field
+    # User Authentication field
     email = db.Column(db.String(255), nullable=False, unique=True)
     username = db.Column(db.String(50), nullable=False, unique=True)
     password = db.Column(db.String(255), nullable=False)
